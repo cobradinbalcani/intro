@@ -21,77 +21,80 @@ def print_spatiu():
 
 # 1.Functie care sa calculeze si sa returneze suma a 2 numere
 
-def calculTwo(x, y):
+def calcul_Two(x, y):
     return f'Suma dintre cele doua nr este: {x + y}'
 
 
-print(calculTwo(4, 1))
-print(calculTwo(6, -2))
+print(calcul_Two(4, 1))
+print(calcul_Two(6, -2))
 
 print_spatiu()
 
 
 # 2. Functie care sa returneze TRUE daca un numar este par, FALSE pt impar
 
-def ParSauImpar(nr):
+def Par_Impar(nr):
     if nr % 2 == 0:
         return True
     else:
         return False
 
 
-print(ParSauImpar(4))
-print(ParSauImpar(5))
+print(Par_Impar(4))
+print(Par_Impar(5))
 
 print_spatiu()
 
 
 # 3. Functie care returneaza numarul total de caractere din numele tau complet. (nume, prenume, nume_mijlociu)
 
-def nrTotChar(numele_meu):
+def nr_Tot_Char(numele_meu):
     # return str(len(numele_meu))                    # varianta care ia in calcul spatiile
     return str(len(numele_meu.replace(' ', '')))  # varianta care nu ia in calcul spatiile
 
 
-print(nrTotChar('Ilie Adrian Marius'))
-print(nrTotChar('numele meu'))
+print(nr_Tot_Char('Ilie Adrian Marius'))
+print(nr_Tot_Char('numele meu'))
 print_spatiu()
+
+
 # 4. Functie care returneaza aria dreptunghiului
 
-def ariaD(a, b):
+def aria_D(a, b):
     return f'Aria dreptunghiului este: {a * b}'
 
 
 a = abs(int(input('Introdu latimea: ')))
 b = abs(int(input('Introdu Lungimea: ')))
-print(ariaD(a, b))
+print(aria_D(a, b))
 
 print_spatiu()
+
+
 # 5. Functie care returneaza aria cercului
 
-def ariaC(r):
+def aria_C(r):
     return f'atunci Aria cercului este: {(r * r) * math.pi}'
 
 
 r = abs(int(input('Daca valoarea razei este: ')))
 
-print(ariaC(r))
-
+print(aria_C(r))
 
 print_spatiu()
 
 
 # 6. Functie care returneaza True daca un caracter x se gaseste intr-un string dat. Fasle daca nu
 
-def charX(string):
+def char_X(string):
     if '3' in string:
         return True
     else:
         return False
 
 
-print(charX('r3*'))
-print(charX('r4*'))
+print(char_X('r3*'))
+print(char_X('r4*'))
 
 print_spatiu()
 
@@ -101,7 +104,7 @@ print_spatiu()
 # -	Nr de caractere upper case exte y
 
 
-def faraReturn(x):
+def fara_Return(x):
     lower = 0
     upper = 0
     not_alpha = 0
@@ -118,8 +121,8 @@ def faraReturn(x):
         f'Nr de caractere upper este: {upper}; nr de lower este: {lower}, iar nr de altfel de caractere este: {not_alpha}.')
 
 
-faraReturn(' PIZZA-4-stagioni ')
-print(faraReturn('McDonalds'))
+fara_Return(' PIZZA-4-stagioni ')
+print(fara_Return('McDonalds'))
 print_spatiu()
 
 
@@ -144,7 +147,7 @@ print_spatiu()
 -	Numerele sunt egale.'''
 
 
-def douaNR(x, y):
+def doua_NR(x, y):
     if x > y:
         print(f'{x} este mai mare ca {y}')
     elif y > x:
@@ -153,16 +156,16 @@ def douaNR(x, y):
         print(f'Cele 2 nr sunt egale.')
 
 
-douaNR(5, 4)
-douaNR(3, 6)
-douaNR(2, 2)
+doua_NR(5, 4)
+doua_NR(3, 6)
+doua_NR(2, 2)
 print_spatiu()
 '''10. Functie care primeste un numar si un set de numere.
 Printeaza ‘am adaugat numarul nou in set’ + returneaza True
 Sau Printeaza ‘nu am adaugat numarul in set. Acesta exista deja’ + returneaza False'''
 
 
-def cuSET(a, b):
+def cu_SET(a, b):
     if a not in b:
         b.add(a)
         print('Am adaugat nr nou in set.')
@@ -174,8 +177,8 @@ def cuSET(a, b):
         return False
 
 
-print(cuSET(0, {66, -2, 3, 4, 5}))
-print(cuSET(3, {66, -2, 3, 4, 5}))
+print(cu_SET(0, {66, -2, 3, 4, 5}))
+print(cu_SET(3, {66, -2, 3, 4, 5}))
 
 print_spatiu()
 
@@ -184,14 +187,14 @@ print_spatiu()
 
 # 11. Functie care primeste o luna din an si returneaza cate zile are acea luna
 
-def zileDinLuna(luna):
+def zile_Din_Luna(luna):
     if luna in range(1, 13):
         ziua = monthrange(2024, luna)[1]
         return ziua
 
 
-print(zileDinLuna(2))
-print(zileDinLuna(3))
+print(zile_Din_Luna(2))
+print(zile_Din_Luna(3))
 
 print_spatiu()
 # 12. Functie calculator care sa returneze 4 valori
@@ -205,12 +208,23 @@ print("Inmultirea: ", c)
 print("Impartirea: ", d)'''
 
 
-def calculator(x, y):    # de verificat impartirea cu zero 0
-    return x + y, x * y, x / y, x - y
+def calculator(x, y):  # de verificat impartirea cu zero 0
+
+    print(x * y, ', inmultire')
+    print(x + y, ', adunare')
+    print(x - y, ', scadere')
+    try:  # bloc de cod pt verificare de eroare
+        x / y  # aici punem codul 'periculos'
+    except ZeroDivisionError as m:  # tratam exceptia ZeroDivisionError (putem inlocui cu "Exception" care inglobeaza toate erorile)
+        print(m)
+    else:  # daca nu avem eroare, nu intra except si ajunge in else ca sa folosim codul
+        print(x / y, ', impartire verificata, pentru impartirea cu zero')
+    finally:  # am pus finally, care se executa indiferent daca este eroare in try sau nu
+        print('am pus finally, care se executa indiferent daca este eroare in try sau nu')
 
 
-print(calculator(10, 2))
-print(calculator(20, 4))
+calculator(10, 2)
+calculator(20, 5)
 print_spatiu()
 '''13. Functie care primeste o lista de cifre (adica doar 0-9)
 Ex: [1, 3, 1, 5, 9, 7, 7, 5, 5]
@@ -229,7 +243,7 @@ Returneaza un DICT care ne spune de cate ori apare fiecare cifra
 }'''
 
 
-def listaCifre(x):
+def lista_Cifre(x):
     dict = {
         0: 0,
         1: 0,
@@ -248,21 +262,21 @@ def listaCifre(x):
     return dict
 
 
-print(listaCifre([1, 3, 1, 5, 9, 7, 7, 5, 5]))
+print(lista_Cifre([1, 3, 1, 5, 9, 7, 7, 5, 5]))
 
 print_spatiu()
 
 
 # 14. Functie care primeste 3 numere.  Returneaza valoarea maxima dintre ele
 
-def nrTrei(x, y, z):  # rezolvare varianta 1 fara IF
+def nr_Trei(x, y, z):  # rezolvare varianta 1 fara IF
     x = int(x)
     y = int(y)
     z = int(z)
     return max(x, y, z)
 
 
-print(nrTrei(2, 0, -3))
+print(nr_Trei(2, 0, -3))
 
 # def trei_nr(x,y,z):                    # rezolvare varianta 2, cu ajutorul lui IF
 #     if (x > y and x > z) and (x != y and x != z):  # conditie ca x sa fie mai mare sau diferit fata de y si z
@@ -304,13 +318,12 @@ from gender_guesser import detector
 import gender_guesser.detector as gender
 
 
-
 def Romanesc(d):
     d = gender.Detector()
     print(d.get_gender('Iris'))
 
-Romanesc(' ')
 
+Romanesc(' ')
 
 print_spatiu()
 '''17. Functie care primesete 2 liste de numere (numerele pot fi dublate)
@@ -322,13 +335,13 @@ list2 = [2, 2, 3, 4]
 Raspuns: {2, 3}'''
 
 
-def interSection(list1, list2):
+def inter_Section(list1, list2):
     list1 = set(list1)
     list2 = set(list2)
     return list1.intersection(list2)
 
 
-print(interSection([1, 1, 2, 3], [2, 2, 3, 4]))
+print(inter_Section([1, 1, 2, 3], [2, 2, 3, 4]))
 
 print_spatiu()
 '''

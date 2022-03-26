@@ -4,7 +4,7 @@
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
 
-import calendar                                   # import de calendar care juta pt zile, luni , ani, data
+import calendar  # import de calendar care juta pt zile, luni , ani, data
 
 
 def printSpatiu():
@@ -111,6 +111,7 @@ def printSpatiu():
 '''
 lucram cu while
 '''
+
 
 # apa = 7
 #
@@ -234,7 +235,7 @@ lucram cu while
 # print(note_elevi['Gigi'])
 # print(note_elevi.get('Gigi'))
 
-#returneaza doar cheile
+# returneaza doar cheile
 # print(note_elevi.keys())
 #
 #
@@ -327,17 +328,17 @@ lucram cu while
 #         i += 1
 
 
-
 # ex sa gasesti care e cel mai mare nr din cele 3 alese
 def nrTrei(x):
     return int(x)
+
 
 print(nrTrei(max(-2, -1, -3)))
 
 t = 3
 pi = 3.14
 
-c = (t*t) * pi
+c = (t * t) * pi
 
 print(c)
 
@@ -346,18 +347,18 @@ x = 'baba'
 print(x.upper())
 print('--------------------------------')
 
-for day in calendar.day_name:          # printez zilele saptamanii
+for day in calendar.day_name:  # printez zilele saptamanii
     print(day)
 
 printSpatiu()
 
-for name in calendar.month_name:        # printez lunile anului
+for name in calendar.month_name:  # printez lunile anului
     print(name)
 
 printSpatiu()
 
 yy = 1974  # year
-mm = 8    # month
+mm = 8  # month
 
 # To take month and year input from the user
 # yy = int(input("Enter year: "))
@@ -387,10 +388,10 @@ import codecs
 
 
 def suma(a, b):
-    return a+b
+    return a + b
 
-print(suma(2,3))
 
+print(suma(2, 3))
 
 # trix = 4 / 0
 # print(trix)
@@ -398,3 +399,15 @@ print(suma(2,3))
 
 azi = 'buna dimineata!'
 print(azi)
+
+xx = 4
+yy = 2
+
+try:  # bloc de cod pt verificare de eroare
+    xx / yy  # aici punem codul 'periculos'
+except Exception as m:  # tratam exceptia 'ZeroDivisionError' - cand pui "Exception" -> acopera toate numele de erori
+    print(m)
+else:  # daca nu avem eroare, nu intra except si ajunge in else ca sa folosim codul
+    print(xx / yy, ', impartire verificata, pentru impartirea cu zero')
+finally:  # am pus finally, care se executa indiferent daca este eroare in try sau nu
+    print('am pus finally, care se executa indiferent daca este eroare in try sau nu')
