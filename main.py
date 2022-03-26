@@ -411,3 +411,9 @@ else:  # daca nu avem eroare, nu intra except si ajunge in else ca sa folosim co
     print(xx / yy, ', impartire verificata, pentru impartirea cu zero')
 finally:  # am pus finally, care se executa indiferent daca este eroare in try sau nu
     print('am pus finally, care se executa indiferent daca este eroare in try sau nu')
+
+t = -1
+
+if t < 0:
+    raise Exception("Sorry, no numbers below zero")     # aici la raise doar adauga un print in eroare
+# e nevoie si de try except ca sa nu mai dea eroare
