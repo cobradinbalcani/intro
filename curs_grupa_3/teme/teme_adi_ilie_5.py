@@ -313,17 +313,17 @@ print_spatiu()
 # ‘Numele este de baiat’ sau ‘Numele este de fata’
 
 
-from gender_guesser import data
-from gender_guesser import detector
-import gender_guesser.detector as gender
-
-
-def Romanesc(d):
-    d = gender.Detector()
-    print(d.get_gender('Iris'))
-
-
-Romanesc(' ')
+# from gender_guesser import data
+# from gender_guesser import detector
+# import gender_guesser.detector as gender
+#
+#
+# def Romanesc(d):
+#     d = gender.Detector()
+#     print(d.get_gender('Iris'))
+#
+#
+# Romanesc(' ')
 
 print_spatiu()
 '''17. Functie care primesete 2 liste de numere (numerele pot fi dublate)
@@ -394,3 +394,6 @@ print(eta(4, 9, 2022))
 print(eta(25, 12, 2023))
 
 print_spatiu()
+
+# if __name__ == '__main__':
+#     print_spatiu()

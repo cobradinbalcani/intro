@@ -3,16 +3,21 @@
 # Pentru toate clasele, creati cel putin 2 obiecte cu valori diferite si apelati toate metodele clasei
 
 
-
 import datetime
 import datetime
 import math
 from datetime import date
 import calendar
 
-#from teme_adi_ilie_5 import print_spatiu
 
-#print_spatiu()
+# from teme_adi_ilie_5 import print_spatiu
+#
+# print_spatiu()
+
+def space():
+    print('------------------------------')
+
+
 '''1. 
 Clasa Cerc
 
@@ -63,7 +68,7 @@ cerc2.aria()
 cerc2.diametru()
 cerc2.circumferinta()
 
-# print_spatiu()
+space()
 '''2. 
 Clasa Dreptunghi
 
@@ -118,7 +123,7 @@ second_d.perimetru()
 second_d.schimba_culoarea('violet')  # introduc noua culoare
 second_d.descrie()  # la print se vede noua culaore
 
-# print_spatiu()
+space()
 
 '''3.
 Clasa Angajat
@@ -177,6 +182,9 @@ angajat2.salariu_lunar()
 angajat2.salariu_anual()
 angajat2.marire_salariu(20)
 angajat2.salariu_anual()
+
+space()
+
 '''4.
 Clasa Factura
 
@@ -242,6 +250,8 @@ print(factura1.nume_produs, factura1.pret_bucata, factura1.cantitate, factura1.n
 factura1.genereaza_factura()
 factura2.genereaza_factura()
 
+space()
+
 '''5. 
 Clasa Cont
 
@@ -298,6 +308,8 @@ cont2.debitare_cont(500)
 cont2.afisare_sold()
 cont2.creditare_cont(10000)
 cont2.afisare_sold()
+
+space()
 
 '''6.
 Clasa Masina
@@ -386,6 +398,8 @@ print(masina2.culoare)
 print(masina2.accelereaza(10))
 masina2.franeaza()
 
+space()
+
 '''7. Clasa TodoList
  
 Atribute: todo (dict, cheia e numele taskului, valoarea e descrierea)
@@ -416,7 +430,7 @@ class ToDoList:
         print(self.todo)
 
     def afiseaza_todo_list(self):
-        print(list(self.todo.keys()))             # afiseaza cheile ca o lista, altfel ar scrie ca este dict cand dai run!
+        print(list(self.todo.keys()))  # afiseaza cheile ca o lista, altfel ar scrie ca este dict cand dai run!
 
     def detalii(self, nume_task):
         if nume_task not in self.todo.keys():
@@ -430,17 +444,21 @@ class ToDoList:
             print(f'{nume_task} se afla deja in lista!')
 
 
-
 shop1 = ToDoList()
 shop2 = ToDoList()
-shop1.adauga_task('apa', 'dorna')                   # printeaza dict cu apa: dorna
-shop1.finalizeaza_task('apa')           # printeza dict gol pt ca am sters cheia
-shop2.adauga_task('bere', 'stela')                   # printeaza dict cu bere: stela
+shop1.adauga_task('apa', 'dorna')  # printeaza dict cu apa: dorna
+shop1.finalizeaza_task('apa')  # printeza dict gol pt ca am sters cheia
+shop2.adauga_task('bere', 'stela')  # printeaza dict cu bere: stela
 shop2.finalizeaza_task('bere')
-shop1.adauga_task('suc', 'natural')                   # printeaza dict cu suc: natural
-shop2.adauga_task('fructe', 'mere')                   # printeaza dict cu suc: natural
+shop1.adauga_task('suc', 'natural')  # printeaza dict cu suc: natural
+shop2.adauga_task('fructe', 'mere')  # printeaza dict cu suc: natural
 
 shop1.afiseaza_todo_list()
 shop1.detalii('alune')
 shop2.afiseaza_todo_list()
 shop2.detalii('fructe')
+
+space()
+
+# if __name__ == '__main__':
+#     print_spatiu()

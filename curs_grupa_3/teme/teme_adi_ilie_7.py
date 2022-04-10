@@ -11,13 +11,18 @@ https://drive.google.com/file/d/17NVuy28nspPt5_DzynmD0CF7mbmiVzY9/view?usp=shari
 
 # https://github.com/cobradinbalcani/intro.git
 
-# from teme_adi_ilie_5 import print_spatiu
+
 import math
-# print_spatiu()
+
 from abc import (
     ABC,
     abstractmethod,
 )
+
+
+def space():
+    print('------------------------------')
+
 
 '''2. Faceti exercitiul dupa ce ati urcat proiectul (tot ce am facut pana acum impreuna)
 
@@ -55,7 +60,7 @@ class FormaGeometrica(ABC):  # ABSTRACTION
 
     @abstractmethod
     def aria(self):
-        raise NotImplementedError
+        raise NotImplementedError  # putem inlocui cu "pass"
 
     def descrie(self):  # POLYMORPHISM mai jos
         print('Cel mai probabil am colturi.')
@@ -121,6 +126,8 @@ del patrat1.lungime  # del lungime
 patrat1.lungime  # get lungime
 patrat1.descrie()
 
+space()
+
 cerc1 = Cerc(2)
 
 cerc1.cercle = 4  # set cercle
@@ -131,5 +138,9 @@ del cerc1.cercle  # del cercle
 cerc1.cercle  # get cercle
 cerc1.descrie()
 
+space()
 ''' 3. Actualizati proiectul pe github facand un push la noul cod
 In Folder de teme ajunge sa puneti doar linkul cu proiectul vostru public'''
+
+# if __name__ == '__main__':
+# ??
