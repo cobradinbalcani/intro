@@ -56,6 +56,15 @@
         }
       ],
       "data_inregistrare": "2022-03-31T17:14:27.218343+03:00"
+    },
+    "06ddc3186ae92ed0c39c0b56f64d879d": {
+      "id_comanda": "06ddc3186ae92ed0c39c0b56f64d879d",
+      "detalii_comanda": [
+        {
+          "radio": 3
+        }
+      ],
+      "data_inregistrare": "2022-04-10T16:39:56.671206+03:00"
     }
   }
 }
