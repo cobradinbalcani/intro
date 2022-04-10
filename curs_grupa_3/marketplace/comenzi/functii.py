@@ -55,94 +55,67 @@ def adauga_o_comanda():
         scrie_datele_in_baza_de_date(datele_noastre)
 
 
-# def modifica_comanda():
-#     """
-#     Introduceti de la tastatura textul: "Introduceți identificatorul comenzii care se modifica: "
-#     Creeam o logica care sa primeasca ca input de la tastatura 4 variante de actiune:
-#         "Alegeti actiunea ('a' - adaugare produs; 'm ' - modificare cantitate; 's'-sterge produs, 'e'-exit \n")
-#         Creeam logica pentru cele 4 variante
-#         Ca input trebuie sa dam produsul si cantitatea pentru 'a' si 'm', pentru 's' dam identificatorul
-#         Din nou, Citim, Actionam, Scriem
-#     """
-#
-#
-#     data_inregistrare = datetime.now(tz=timezone(country_timezones.get("RO")[0]))
-#     datele_noastre = citeste_datele_din_baza_de_date()
-#     identificatorul = input('Introduceți identificatorul comenzii care se modifica: \n')
-#     if identificatorul in datele_noastre['comenzi']:
-#         print('Alegeti actiunea ("a" - adaugare produs; "m" - modificare cantitate; "a" -sterge produs, "e" -exit \n')
-#         id_produs = ''
-#
-#
-#         actiune = ''
-#         while actiune != 'e':
-#             actiune = input('\n')
-#             if actiune == 'e':
-#                 pass
-#             elif actiune == 'a':
-#
-#                 while len(id_produs) < 1 or len(id_produs) > 50:
-#                     id_produs = input('Introduceti numele produsului de adaugat: \n')
-#                     if len(id_produs) < 1 or len(id_produs) > 50:
-#                         print('Nume invalid, trebuie sa aiba intre 1 si 50 de caractere')
-#                 cantitate_produs = abs(int(input('Introduceti cantitatea produsului din comanda: \n')))
-#                 detalii_comanda = [{id_produs: cantitate_produs}]
-#                 datele_noastre['comenzi'][identificatorul] = {
-#                 "id_comanda": identificatorul,
-#                 "detalii_comanda": detalii_comanda,
-#                 "data_inregistrare": data_inregistrare.isoformat() # sau str(data_inregistrare)
-#                  }
-#                 print("Alegeti actiunea ('a' - adaugare produs; 'm ' - modificare cantitate; 's'-sterge produs, 'e'-exit \n")
-#             elif actiune == "m":
-#                 while len(id_produs) < 1 or len(id_produs) > 50:
-#                     id_produs = input('Introduceti numele produsului de adaugat: \n')
-#                     if len(id_produs) < 1 or len(id_produs) > 50:
-#                         print('Invalid, trebuie sa fie intre 1 si 50 caractere.')
-#                 cantitate_produs = abs(int(input('Introduceti cantitatea produsului din comanda: \n')))
-#                 detalii_comanda = [{id_produs: cantitate_produs}]
-#                 datele_noastre["comenzi"][identificatorul] = {
-#                 "id_comanda": identificatorul,
-#                 "detalii_comanda": detalii_comanda,
-#                 "data_inregistrare": data_inregistrare.isoformat() # sau str(data_inregistrare)
-#                 }
-#                 print("Alegeti actiunea ('a' - adaugare produs; 'm ' - modificare cantitate; 's'-sterge produs, 'e'-exit \n")
-#             elif actiune == 's':
-#                 datele_noastre['comenzi'].pop(identificatorul)
-#                 print('Alegeti actiunea ("a" - adaugare produs; "m" - modificare cantitate; "s" -sterge produs, "e" -exit \n')
-#             else:
-#                 actiune = input('\n')
-#     else:
-#         print('Identificator gresit')
-#
-#
-#     scrie_datele_in_baza_de_date(datele_noastre)
-
-
 def modifica_comanda():
-    datele = citeste_datele_din_baza_de_date()
-    identificator_de_sters = input("Introduceți identificatorul comenzii care se modifica: ")
-    while True:
-        actiune = input(
-            "Alegeti actiunea ('a' - adaugare produs; 'm ' - modificare cantitate; 's'-sterge produs, 'e'-exit \n")
-        detalii_comanda = datele["comenzi"][identificator_de_sters]["detalii_comanda"]
-        if actiune == 'a':
-            add_prod = input("Introduceti produsul:")
-            add_cant = input("Introduceti cantitatea:")
-            detalii_comanda[add_prod] = add_cant
-        elif actiune == 'm':
-            add_prod = input("Introduceti produsul:")
-            add_cant_noua = input("Introduceti cantitatea noua la acest produs")
-            detalii_comanda[add_prod] = add_cant_noua
-        elif actiune == 's':
-            sterge_prod = input("Stergeti produsul:")
-            detalii_comanda.pop(sterge_prod)
-        elif actiune == 'e':
-            print('La revedere, pe curand!')
-            break
-        else:
-            print("Nu ati ales nici o actiune!")
-            break
-    scrie_datele_in_baza_de_date(datele)
+    """
+    Introduceti de la tastatura textul: "Introduceți identificatorul comenzii care se modifica: "
+    Creeam o logica care sa primeasca ca input de la tastatura 4 variante de actiune:
+        "Alegeti actiunea ('a' - adaugare produs; 'm ' - modificare cantitate; 's'-sterge produs, 'e'-exit \n")
+        Creeam logica pentru cele 4 variante
+        Ca input trebuie sa dam produsul si cantitatea pentru 'a' si 'm', pentru 's' dam identificatorul
+        Din nou, Citim, Actionam, Scriem
+    """
+
+
+    data_inregistrare = datetime.now(tz=timezone(country_timezones.get("RO")[0]))
+    datele_noastre = citeste_datele_din_baza_de_date()
+    identificatorul = input('Introduceți identificatorul comenzii care se modifica: \n')
+    if identificatorul in datele_noastre['comenzi']:
+        print('Alegeti actiunea ("a" - adaugare produs; "m" - modificare cantitate; "a" -sterge produs, "e" -exit \n')
+        id_produs = ''
+
+
+        actiune = ''
+        while actiune != 'e':
+            actiune = input('\n')
+            if actiune == 'e':
+                pass
+            elif actiune == 'a':
+
+                while len(id_produs) < 1 or len(id_produs) > 50:
+                    id_produs = input('Introduceti numele produsului de adaugat: \n')
+                    if len(id_produs) < 1 or len(id_produs) > 50:
+                        print('Nume invalid, trebuie sa aiba intre 1 si 50 de caractere')
+                cantitate_produs = abs(int(input('Introduceti cantitatea produsului din comanda: \n')))
+                detalii_comanda = [{id_produs: cantitate_produs}]
+                datele_noastre['comenzi'][identificatorul] = {
+                "id_comanda": identificatorul,
+                "detalii_comanda": detalii_comanda,
+                "data_inregistrare": data_inregistrare.isoformat() # sau str(data_inregistrare)
+                 }
+                print("Alegeti actiunea ('a' - adaugare produs; 'm ' - modificare cantitate; 's'-sterge produs, 'e'-exit \n")
+            elif actiune == "m":
+                while len(id_produs) < 1 or len(id_produs) > 50:
+                    id_produs = input('Introduceti numele produsului de adaugat: \n')
+                    if len(id_produs) < 1 or len(id_produs) > 50:
+                        print('Invalid, trebuie sa fie intre 1 si 50 caractere.')
+                cantitate_produs = abs(int(input('Introduceti cantitatea produsului din comanda: \n')))
+                detalii_comanda = [{id_produs: cantitate_produs}]
+                datele_noastre["comenzi"][identificatorul] = {
+                "id_comanda": identificatorul,
+                "detalii_comanda": detalii_comanda,
+                "data_inregistrare": data_inregistrare.isoformat() # sau str(data_inregistrare)
+                }
+                print("Alegeti actiunea ('a' - adaugare produs; 'm ' - modificare cantitate; 's'-sterge produs, 'e'-exit \n")
+            elif actiune == 's':
+                datele_noastre['comenzi'].pop(identificatorul)
+                print('Alegeti actiunea ("a" - adaugare produs; "m" - modificare cantitate; "s" -sterge produs, "e" -exit \n')
+            else:
+                actiune = input('\n')
+    else:
+        print('Identificator gresit')
+
+
+    scrie_datele_in_baza_de_date(datele_noastre)
 
 
 def listeaza_toate_comenzile():
