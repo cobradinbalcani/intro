@@ -7,7 +7,7 @@ app = Flask('FLASK API EXAMPLE')
 
 @app.route("/home_page", methods=["GET"])
 def home_page():
-    return f"Hello, Welcome to my Homepage"
+    return f"Hello, Welcome to my Homepage!"
 
 
 @app.route("/afisare_mesaj", methods=["POST"])
@@ -29,6 +29,18 @@ def afisare_mesaj_text():
 @app.route("/get_user/<user>", methods=["GET"])
 def get_user(user):
     return f"Hello, I'm user {user}"
+
+@app.route("/get_utilizator/<id_utilizator>", methods=["GET"])
+def get_utilizator(utilizator):
+    return f"Hi, I'm user {utilizator}"
+
+@app.route("/get_product/<produs>", methods=["GET"])
+def get_product(produs):
+    return f"Hi, this is the product {produs}"
+
+@app.route("/get_order/<id_cmd>", methods=["GET"])
+def get_order(cmd):
+    return f"Hi, this is the order {cmd}"
 
 
 @app.route("/delete_user/<user>", methods=["DELETE"])

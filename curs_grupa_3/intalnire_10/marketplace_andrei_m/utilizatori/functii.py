@@ -38,6 +38,12 @@ def adauga_un_utilizator():
 
 
 def adauga_un_utilizator_flask(user_name, email_address):
+    while len(user_name) < 1 or len(user_name) > 50:
+        user_name = input("Introduceti numele utilizatorului:\n")
+        if len(user_name) < 1 or len(user_name) > 50:
+            print("Nume Invalid - Lungimea numelui trebuie sa fie intre 1 si 50 de caractere")
+    while len(email_address) < 1:
+        email_address = input("Introduceti emailul utilizatorului:\n")
     id_utilizator = genereaza_id({user_name: email_address})
     data_inregistrare = datetime.now(tz=timezone(country_timezones.get("RO")[0]))
     datele = citeste_datele_din_baza_de_date()

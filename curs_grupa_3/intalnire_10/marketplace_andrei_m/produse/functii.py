@@ -39,8 +39,8 @@ def adauga_un_produs():
 
 def adauga_un_produs_flask(product_name, price_tag):
     while len(product_name) < 1 or len(product_name) > 50:
-        nume_produs = input('\nIntroduceti numele produsului de adaugat: ')
-        if len(nume_produs) < 1 or len(nume_produs) > 50:
+        product_name = input('\nIntroduceti numele produsului de adaugat: ')
+        if len(product_name) < 1 or len(product_name) > 50:
             print("Nume Invalid - Lungimea numelui trebuie sa fie intre 1 si 50 de caractere")
     while len(price_tag) < 1:
         price_tag = input('\nIntroduceti pretului produsului de adaugat: ')
@@ -48,7 +48,7 @@ def adauga_un_produs_flask(product_name, price_tag):
     data_inregistrare = datetime.now(tz=timezone(country_timezones.get("RO")[0]))
     datele = citeste_datele_din_baza_de_date()
     datele["produse"][id_produs] = {
-        "nume_produs": product_name,
+        "product_name": product_name,
         "pret": price_tag,
         "data_inregistrare": data_inregistrare.isoformat()
     }

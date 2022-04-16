@@ -12,6 +12,6 @@
 # Puteti identifica ce functionalitati comune aveti si sa refactorizati codul
 # Puteti implementa diverse validari, ceva similar cum erau cele pentru functionalitate de adaugare
 #  user in care verificam ca lungimea sa aiba o anumita lungime. La email de exemplu puteti verifica
-#   daca email-ul are o structura valida gen, ceva@ceva.ceva (hint research Regex in pyhon)
+#   daca email-ul are o structura valida gen, ceva@ceva.ceva (hint research Regex in python)
 
 

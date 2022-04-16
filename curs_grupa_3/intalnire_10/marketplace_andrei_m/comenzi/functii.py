@@ -53,11 +53,11 @@ def adauga_o_comanda_flask():
     data_inregistrare = datetime.now(tz=timezone(country_timezones.get("RO")[0]))
     datele = citeste_datele_din_baza_de_date()
     datele["comenzi"][id_cmd] = {
-        "detalii_comanda": detalii_cmd,
+        "detalii_cmd": detalii_cmd,
         "data_inregistrare": data_inregistrare.isoformat()
     }
     scrie_datele_in_baza_de_date(datele)
-    return id_produs
+    return id_cmd
 
 
 def modifica_comanda():
