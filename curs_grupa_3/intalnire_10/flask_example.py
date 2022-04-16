@@ -38,4 +38,4 @@ def delete_user(user):
 
 
 if __name__ == "__main__":
-    app.run()                         #app.run(port=8000) se paote face si asa ca sa modificam in loc de 5000 - lucram pe alt port asa
+    app.run()                 #app.run(port=8000) se paote face si asa ca sa modificam in loc de 5000 - in acest mod lucram pe alt port

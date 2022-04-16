@@ -1,6 +1,6 @@
 import json
 
-from baza_de_date import calea_catre_baza_de_date
+from intalnire_10.marketplace_andrei_m.baza_de_date import calea_catre_baza_de_date
 
 
 def citeste_datele_din_baza_de_date():

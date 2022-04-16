@@ -2,6 +2,8 @@ import json
 
 from flask import Flask, Response, request
 from utilizatori.functii import adauga_un_utilizator_flask, listeaza_toti_utilizatorii_flask, sterge_un_utilizator_flask
+from produse.functii import adauga_un_produs_flask, listeaza_toate_produsele_flask, sterge_un_produs_flask
+from comenzi.functii import adauga_o_comanda_flask, modifica_o_comanda_flask, listeaza_toate_comenzile_flask, sterge_o_comanda_flask
 
 app = Flask("Marketplace API")
 

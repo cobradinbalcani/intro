@@ -13,8 +13,8 @@ from pprint import pprint
 
 from pytz import country_timezones, timezone
 
-from baza_de_date.functii import citeste_datele_din_baza_de_date, scrie_datele_in_baza_de_date
-from common.utils import genereaza_id, sterge
+from intalnire_10.marketplace_andrei_m.baza_de_date.functii import citeste_datele_din_baza_de_date, scrie_datele_in_baza_de_date
+from intalnire_10.marketplace_andrei_m.common.utils import genereaza_id, sterge
 
 
 def adauga_un_utilizator():
