@@ -75,6 +75,7 @@ def put_product():
 def put_order():
     message = json.loads(request.data)
     detalii_cmd = message.get("detalii_cmd")
+    print("Introduceti produsele din comanda. Pentru a termina, introduceti 'stop':\n")
     while True:
         id_produs = input(" Produsul: ")
         if id_produs == "stop":
@@ -93,9 +94,48 @@ def list_users():
     return Response(status=200, response=json.dumps(listeaza_toti_utilizatorii_flask()))
 
 
+@app.route("/list_utilizatorii", methods=["GET"])
+def list_utilizatorii():
+    response = listeaza_toti_utilizatorii_flask()
+    print(response)
+    return Response(status=200, response=json.dumps(listeaza_toti_utilizatorii_flask()))
+
+
+@app.route("/list_products", methods=["GET"])
+def list_products():
+    response = listeaza_toate_produsele_flask()
+    print(response)
+    return Response(status=200, response=json.dumps(listeaza_toate_produsele_flask()))
+
+
+@app.route("/list_orders", methods=["GET"])
+def list_orders():
+    # response = listeaza_toate_comenzile_flask()
+    # print(response)
+    return Response(status=200, response=json.dumps(listeaza_toate_comenzile_flask()))
+
+
 @app.route("/delete_user/<string:user_id>", methods=["DELETE"])
 def delete_user(user_id):
     status, message = sterge_un_utilizator_flask(user_id)
+    return Response(status=status, response=json.dumps({"message": message}))
+
+
+@app.route("/delete_product/<string:id_produs>", methods=["DELETE"])
+def delete_product(id_produs):
+    status, message = sterge_un_produs_flask(id_produs)
+    return Response(status=status, response=json.dumps({"message": message}))
+
+
+@app.route("/delete_order/<string:id_cmd>", methods=["DELETE"])
+def delete_order(id_cmd):
+    status, message = sterge_o_comanda_flask(id_cmd)
+    return Response(status=status, response=json.dumps({"message": message}))
+
+
+@app.route("/delete_utilizator/<string:id_utilizator>", methods=["DELETE"])
+def delete_utilizator(id_utilizator):
+    status, message = sterge_un_utilizator_flask(id_utilizator)
     return Response(status=status, response=json.dumps({"message": message}))
 
 

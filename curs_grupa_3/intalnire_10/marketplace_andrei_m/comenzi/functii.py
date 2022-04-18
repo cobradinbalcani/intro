@@ -40,14 +40,14 @@ def adauga_o_comanda():
 
 def adauga_o_comanda_flask():
     detalii_cmd = {}
-    print("Introduceti produsele din comanda. Pentru a termina, introduceti 'stop':\n")
-    while True:
-        id_produs = input(" Produsul: ")
-        if id_produs == "stop":
-            break
-        else:
-            CantitateProdus = input(" Cantitatea: ")
-            detalii_cmd[id_produs] = CantitateProdus
+    # print("Introduceti produsele din comanda. Pentru a termina, introduceti 'stop':\n")
+    # while True:
+    #     id_produs = input(" Produsul: ")
+    #     if id_produs == "stop":
+    #         break
+    #     else:
+    #         CantitateProdus = input(" Cantitatea: ")
+    #         detalii_cmd[id_produs] = CantitateProdus
 
     id_cmd = genereaza_id(detalii_cmd)
     data_inregistrare = datetime.now(tz=timezone(country_timezones.get("RO")[0]))

@@ -9,8 +9,38 @@
       "nume": "Andrei",
       "email": "andrei.muresan@email.com",
       "data_inregistrare": "2022-03-28T20:04:59.698906+03:00"
+    },
+    "8f4d0f8d15d87b804b12ada48d0a8df5": {
+      "nume": "cholo_simeone",
+      "email": "cholo@simeone.com",
+      "data_inregistrare": "2022-04-18T19:06:32.976058+03:00"
     }
   },
-  "produse": {},
-  "comenzi": {}
+  "produse": {
+    "54dd2984affc460d76c370de82445f1e": {
+      "product_name": "proba3",
+      "pret": "75,3",
+      "data_inregistrare": "2022-04-18T19:48:18.613455+03:00"
+    }
+  },
+  "comenzi": {
+    "671b8189a86127d4c3de02c5976402e7": {
+      "detalii_cmd": {
+        "proba_tv": "7"
+      },
+      "data_inregistrare": "2022-04-18T20:14:03.166156+03:00"
+    },
+    "d28c802b4845b665f6f61d4b2815388e": {
+      "detalii_cmd": {
+        "tv": "5"
+      },
+      "data_inregistrare": "2022-04-18T20:17:19.800430+03:00"
+    },
+    "9888c9ea6f85a89a3462a721a54a5096": {
+      "detalii_cmd": {
+        "radio": "4"
+      },
+      "data_inregistrare": "2022-04-18T20:20:55.115171+03:00"
+    }
+  }
 }
