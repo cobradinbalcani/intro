@@ -17,7 +17,7 @@ def adauga_un_produs_flask_mongo(request_body):
     db = MongoDB()
     if db.get_product_by_name(request_body["product_name"]):
         return 400, f"Produs-ul cu numele {request_body['product_name']} deja exista in baza de date"
-    id_produs = genereaza_id({request_body["product_name"]: request_body["product_quantity"]})
+    id_produs = genereaza_id({request_body["product_name"]: request_body["product_price"]})
     data_inregistrare = datetime.now(tz=timezone(country_timezones.get("RO")[0])).isoformat()
     request_body["id_produs"] = id_produs
     request_body["data_inregistrare"] = data_inregistrare
