@@ -15,6 +15,8 @@ class MongoDB:
     db = client["cluster0"]
     collection = db["cluster0_collection"]
 
+    # -------------------------------------------CREATE--------------------------------------
+
     def create_user(self, user_model: UsersMongoDBModel):
         print(user_model.__dict__)
         self.collection.insert_one(user_model.__dict__)
@@ -29,6 +31,8 @@ class MongoDB:
         print(order_model.__dict__)
         self.collection.insert_one(order_model.__dict__)
         return order_model._id
+
+    # -------------------------------------------GET--------------------------------------
 
     def get_user_by_id(self, user_id):
         result = self.collection.find_one({"_id": user_id})
@@ -54,6 +58,8 @@ class MongoDB:
         result = self.collection.find(filter={"order_name": name})
         return list(result)
 
+    # -------------------------------------------LIST ALL--------------------------------------
+
     def list_all_users(self):
         result = self.collection.find(filter={"user_name": {"$exists": 1}})
         return list(result)
@@ -65,6 +71,8 @@ class MongoDB:
     def list_all_orders(self):
         result = self.collection.find(filter={"order_name": {"$exists": 1}})
         return list(result)
+
+    # -------------------------------------------DELETE--------------------------------------
 
     def delete_user_by_id(self, user_id):
         self.collection.delete_one({"_id": user_id})

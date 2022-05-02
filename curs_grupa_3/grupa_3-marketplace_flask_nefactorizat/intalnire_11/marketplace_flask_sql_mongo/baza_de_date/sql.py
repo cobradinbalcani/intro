@@ -58,6 +58,8 @@ class SQLiteDatabaseConnection:
             logger.error(e, exc_info=True)
             raise
 
+    # -------------------------------------------CREATE--------------------------------------
+
     @check_session()
     def create_user(self, user_model: UsersSQLDBModel):
         self.session.add(user_model)
@@ -72,6 +74,8 @@ class SQLiteDatabaseConnection:
     def create_order(self, order_model: OrdersSQLDBModel):
         self.session.add(order_model)
         return order_model.id
+
+    # -------------------------------------------GET--------------------------------------
 
     @check_session()
     def get_user_by_id(self, user_id):
@@ -97,6 +101,8 @@ class SQLiteDatabaseConnection:
     def get_order_by_name(self, name):
         return self.session.query(OrdersSQLDBModel).filter(OrdersSQLDBModel.order_name == name).one_or_none()
 
+    # -------------------------------------------LIST ALL--------------------------------------
+
     @check_session()
     def list_all_users(self):
         return self.session.query(UsersSQLDBModel).all()
@@ -108,6 +114,8 @@ class SQLiteDatabaseConnection:
     @check_session()
     def list_all_orders(self):
         return self.session.query(OrdersSQLDBModel).all()
+
+    # -------------------------------------------DELETE--------------------------------------
 
     @check_session()
     def delete_user_by_id(self, user_id):
@@ -124,6 +132,7 @@ class SQLiteDatabaseConnection:
         deleted_rows = self.session.query(OrdersSQLDBModel).filter(OrdersSQLDBModel.id == order_id).delete()
         return deleted_rows
 
+    # -------------------------------------------EXIT--------------------------------------
 
     def __exit__(self, exc_type, exc_value, traceback):
         if exc_type:
